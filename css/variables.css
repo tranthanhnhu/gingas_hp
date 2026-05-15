@@ -1,0 +1,67 @@
+:root {
+  --c-navy-900: #0b1f3a;
+  --c-navy-800: #122c52;
+  --c-navy-700: #1a365d;
+  --c-navy-600: #234a7a;
+  --c-navy-500: #2f5e9e;
+  --c-navy-100: #e7eef7;
+  --c-navy-50: #f4f7fc;
+
+  --c-emerald-700: #047857;
+  --c-emerald-600: #059669;
+  --c-emerald-500: #10b981;
+  --c-emerald-400: #34d399;
+  --c-emerald-100: #d1fae5;
+
+  --c-gold: #c9a45c;
+  --c-white: #ffffff;
+  --c-bg: #ffffff;
+  --c-surface: #f7f9fc;
+  --c-border: #e2e8f0;
+  --c-text: #1f2937;
+  --c-text-muted: #5b6878;
+  --c-text-soft: #8a96a7;
+
+  --c-accent: var(--c-emerald-500);
+  --c-primary: var(--c-navy-700);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 6px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.12);
+  --shadow-xl: 0 24px 60px rgba(15, 23, 42, 0.18);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-xl: 28px;
+
+  --ff-sans: "Inter", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic",
+    "Meiryo", system-ui, -apple-system, sans-serif;
+  --ff-serif: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+
+  --fs-xs: clamp(0.75rem, 0.72rem + 0.15vw, 0.82rem);
+  --fs-sm: clamp(0.825rem, 0.8rem + 0.15vw, 0.9rem);
+  --fs-base: clamp(0.95rem, 0.9rem + 0.2vw, 1rem);
+  --fs-md: clamp(1.05rem, 1rem + 0.3vw, 1.15rem);
+  --fs-lg: clamp(1.2rem, 1.1rem + 0.5vw, 1.4rem);
+  --fs-xl: clamp(1.5rem, 1.3rem + 0.9vw, 1.9rem);
+  --fs-2xl: clamp(1.9rem, 1.6rem + 1.4vw, 2.5rem);
+  --fs-3xl: clamp(2.4rem, 2rem + 2vw, 3.4rem);
+  --fs-4xl: clamp(2.8rem, 2.3rem + 2.4vw, 4rem);
+
+  --container: 1240px;
+  --container-narrow: 880px;
+  --space-section: clamp(4rem, 3rem + 4vw, 7rem);
+
+  --ease-out: cubic-bezier(0.2, 0.7, 0.1, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --header-height: 76px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --space-section: clamp(3rem, 2rem + 6vw, 5rem);
+  }
+}

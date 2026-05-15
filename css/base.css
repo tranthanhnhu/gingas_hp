@@ -1,0 +1,148 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-base);
+  color: var(--c-text);
+  background-color: var(--c-bg);
+  letter-spacing: 0.02em;
+  font-feature-settings: "palt";
+}
+
+main {
+  display: block;
+  min-height: 60vh;
+}
+
+a {
+  color: var(--c-navy-700);
+  transition: color 0.25s var(--ease-out), opacity 0.25s var(--ease-out);
+}
+
+a:hover {
+  color: var(--c-emerald-600);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-sans);
+  color: var(--c-navy-900);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--fs-3xl);
+}
+
+h2 {
+  font-size: var(--fs-2xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+}
+
+p {
+  color: var(--c-text);
+  line-height: 1.85;
+}
+
+.container {
+  width: min(100% - 2.5rem, var(--container));
+  margin-inline: auto;
+}
+
+.container-narrow {
+  width: min(100% - 2.5rem, var(--container-narrow));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-section);
+  position: relative;
+}
+
+.section--alt {
+  background: var(--c-navy-50);
+}
+
+.section--dark {
+  background: linear-gradient(135deg, var(--c-navy-900), var(--c-navy-700));
+  color: var(--c-white);
+}
+
+.section--dark h2,
+.section--dark h3,
+.section--dark p {
+  color: var(--c-white);
+}
+
+.section__head {
+  text-align: center;
+  margin-bottom: clamp(2rem, 1.5rem + 1.5vw, 3.5rem);
+}
+
+.section__eyebrow {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.35em;
+  color: var(--c-emerald-600);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.section--dark .section__eyebrow {
+  color: var(--c-emerald-400);
+}
+
+.section__title {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.section__title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background: linear-gradient(90deg, var(--c-emerald-500), var(--c-navy-600));
+  border-radius: 2px;
+}
+
+.section__subtitle {
+  margin-top: 1rem;
+  color: var(--c-text-muted);
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.section--dark .section__subtitle {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
