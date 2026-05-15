@@ -109,18 +109,54 @@
 
     <main id="main">
       <!-- ====== HERO ====== -->
-      <section class="hero" aria-label="ヒーロー">
-        <div class="hero__bg">
-          <img
-            src="images/hero/hero-factory.jpg"
-            alt=""
-            width="1920"
-            height="1080"
-            fetchpriority="high"
-          />
+      <section class="hero" aria-label="ヒーロー" data-hero-slideshow>
+        <div class="hero__ambient" aria-hidden="true"></div>
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__slides">
+            <figure class="hero__slide is-active" data-hero-slide="0">
+              <img
+                src="images/hero/hero-factory.jpg"
+                alt=""
+                width="1920"
+                height="1080"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </figure>
+            <figure class="hero__slide" data-hero-slide="1">
+              <img
+                src="images/hero/hero-fallback.jpg"
+                alt=""
+                width="1920"
+                height="1080"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="hero__slide" data-hero-slide="2">
+              <img
+                src="images/factory/factory-01.jpg"
+                alt=""
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <figure class="hero__slide" data-hero-slide="3">
+              <img
+                src="images/factory/factory-03.jpg"
+                alt=""
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
         </div>
 
-        <div class="container">
+        <div class="container hero__foreground">
           <div class="hero__inner">
             <span class="hero__eyebrow reveal">PRECISION &amp; VITALITY</span>
             <h1 class="hero__title reveal" data-delay="1">
@@ -147,10 +183,16 @@
               </a>
               <a href="contact.html" class="btn btn--ghost">お問い合わせ</a>
             </div>
+            <div
+              class="hero__dots reveal"
+              data-delay="3"
+              role="tablist"
+              aria-label="ヒーロー背景画像の切り替え"
+            ></div>
           </div>
         </div>
 
-        <div class="hero__meta reveal" data-delay="4" aria-label="主要指標">
+        <div class="hero__meta hero__foreground reveal" data-delay="4" aria-label="主要指標">
           <div>
             <strong>2020</strong>
             <span>創業年</span>
@@ -180,7 +222,7 @@
           </div>
 
           <div class="products-grid">
-            <article class="card reveal">
+            <a href="products/bificure.html" class="card reveal">
               <div class="card__media">
                 <img
                   src="images/products/product-bificure-01.jpg"
@@ -198,9 +240,9 @@
                   ビフィズス菌・乳酸菌を独自配合した次世代腸内環境ケアサプリ。
                 </p>
               </div>
-            </article>
+            </a>
 
-            <article class="card reveal" data-delay="1">
+            <a href="products/tokyo-res-1000.html" class="card reveal" data-delay="1">
               <div class="card__media">
                 <img
                   src="images/products/product-res-01.jpg"
@@ -213,14 +255,14 @@
               </div>
               <div class="card__body">
                 <span class="card__tag">Healthcare</span>
-                <h3 class="card__title">RES Series</h3>
+                <h3 class="card__title">TOKYO RES-1000</h3>
                 <p class="card__text">
-                  日本特許原料を採用したレスベラトロール系プレミアムライン。
+                  乳酸発酵ハナビラタケを採用したプレミアム健康食品ライン。
                 </p>
               </div>
-            </article>
+            </a>
 
-            <article class="card reveal" data-delay="2">
+            <a href="services.html" class="card reveal" data-delay="2">
               <div class="card__media">
                 <img
                   src="images/products/product-res-02.jpg"
@@ -238,9 +280,9 @@
                   ブランドコンセプトから処方設計まで一貫対応する化粧品開発。
                 </p>
               </div>
-            </article>
+            </a>
 
-            <article class="card reveal" data-delay="3">
+            <a href="services.html" class="card reveal" data-delay="3">
               <div class="card__media">
                 <img
                   src="images/products/product-res-04.jpg"
@@ -258,7 +300,7 @@
                   医薬部外品・健康関連製品の処方開発と各国法規制対応。
                 </p>
               </div>
-            </article>
+            </a>
           </div>
         </div>
       </section>
@@ -508,59 +550,146 @@
           <div class="partners-grid">
             <div class="partner reveal">
               <div class="partner__logo">
-                <span>images/partners/partner-01.png</span>
+                <img
+                  src="images/partners/partner-01.png"
+                  alt="株式会社かつらぎ産業"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 01</span>
-              <span class="partner__country">JAPAN</span>
+              <span class="partner__name">株式会社かつらぎ産業</span>
             </div>
             <div class="partner reveal" data-delay="1">
               <div class="partner__logo">
-                <span>images/partners/partner-02.png</span>
+                <img
+                  src="images/partners/partner-02.png"
+                  alt="コンビ株式会社"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 02</span>
-              <span class="partner__country">USA</span>
+              <span class="partner__name">コンビ株式会社</span>
             </div>
             <div class="partner reveal" data-delay="2">
               <div class="partner__logo">
-                <span>images/partners/partner-03.png</span>
+                <img
+                  src="images/partners/partner-03.png"
+                  alt="芳香園製薬株式会社"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 03</span>
-              <span class="partner__country">VIETNAM</span>
+              <span class="partner__name">芳香園製薬株式会社</span>
             </div>
             <div class="partner reveal" data-delay="3">
               <div class="partner__logo">
-                <span>images/partners/partner-04.png</span>
+                <img
+                  src="images/partners/partner-04.png"
+                  alt="TOA株式会社"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 04</span>
-              <span class="partner__country">THAILAND</span>
+              <span class="partner__name">TOA株式会社</span>
             </div>
             <div class="partner reveal">
               <div class="partner__logo">
-                <span>images/partners/partner-05.png</span>
+                <img
+                  src="images/partners/partner-05.png"
+                  alt="アリスチーノ"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 05</span>
-              <span class="partner__country">CHINA</span>
+              <span class="partner__name">アリスチーノ</span>
             </div>
             <div class="partner reveal" data-delay="1">
               <div class="partner__logo">
-                <span>images/partners/partner-06.png</span>
+                <img
+                  src="images/partners/partner-06.png"
+                  alt="株式会社三協"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 06</span>
-              <span class="partner__country">AUSTRALIA</span>
+              <span class="partner__name">株式会社三協</span>
             </div>
             <div class="partner reveal" data-delay="2">
               <div class="partner__logo">
-                <span>images/partners/partner-07.png</span>
+                <img
+                  src="images/partners/partner-07.png"
+                  alt="協和薬品株式会社"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 07</span>
-              <span class="partner__country">SINGAPORE</span>
+              <span class="partner__name">協和薬品株式会社</span>
             </div>
             <div class="partner reveal" data-delay="3">
               <div class="partner__logo">
-                <span>images/partners/partner-08.png</span>
+                <img
+                  src="images/partners/partner-08.png"
+                  alt="CLC]有限公司"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <span class="partner__name">パートナー企業 08</span>
-              <span class="partner__country">KOREA</span>
+              <span class="partner__name">CLC]有限公司</span>
+            </div>
+            <div class="partner reveal">
+              <div class="partner__logo">
+                <img
+                  src="images/partners/partner-09.png"
+                  alt="ALBEA Groupe"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <span class="partner__name">ALBEA Groupe</span>
+            </div>
+            <div class="partner reveal" data-delay="1">
+              <div class="partner__logo">
+                <img
+                  src="images/partners/partner-10.png"
+                  alt="株式会社JINSEID"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <span class="partner__name">株式会社JINSEID</span>
+            </div>
+            <div class="partner reveal" data-delay="2">
+              <div class="partner__logo">
+                <img
+                  src="images/partners/partner-11.png"
+                  alt="An Care Pharma Co.LTD"
+                  width="320"
+                  height="192"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <span class="partner__name">An Care Pharma Co.LTD</span>
             </div>
           </div>
         </div>
@@ -578,41 +707,51 @@
           </div>
 
           <div class="news-grid">
-            <article class="card news-card reveal">
+            <a href="news/vietnam-healthcare-event.html" class="card news-card reveal">
               <div class="card__media media-frame media-frame--16x9">
-                <div class="media-frame__label">
-                  images/news/news-01.jpg<span>16:9 サムネイル</span>
-                </div>
+                <img
+                  src="images/factory/factory-02.jpg"
+                  alt="製造ラインのイメージ"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card__body">
-                <span class="card__tag">Press</span>
+                <span class="card__tag">イベント</span>
                 <h3 class="card__title">
-                  新製品 BIFICURE 2.0 をグローバル市場へ展開
+                  ベトナムのヘルスケア分野での「国際医療協力」イベントに参加しました
                 </h3>
                 <p class="card__text">
-                  独自処方をさらにブラッシュアップした次世代腸活サプリメントを発表。
+                  国内外の専門家との知見交換と、ヘルスケア分野における国際協力の機会を得ました。
                 </p>
-                <span class="card__meta">2026.05.10</span>
+                <span class="card__meta">2025.07.02</span>
               </div>
-            </article>
+            </a>
 
-            <article class="card news-card reveal" data-delay="1">
+            <a href="news/company-overview-2026.html" class="card news-card reveal" data-delay="1">
               <div class="card__media media-frame media-frame--16x9">
-                <div class="media-frame__label">
-                  images/news/news-02.jpg<span>16:9 サムネイル</span>
-                </div>
+                <img
+                  src="images/hero/hero-fallback.jpg"
+                  alt="Gingas ブランドビジュアル"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card__body">
-                <span class="card__tag">Exhibition</span>
+                <span class="card__tag">会社情報</span>
                 <h3 class="card__title">
-                  Cosme Tokyo 2026 出展のお知らせ
+                  合同会社ギンガス：グローバルOEMと貿易を一気通貫で
                 </h3>
                 <p class="card__text">
-                  東京ビッグサイトにて開催される国際化粧品展に出展いたします。
+                  有明本社を拠点に、OEM/ODM・自社ブランド・輸出入を一体で支援する体制をご紹介します。
                 </p>
-                <span class="card__meta">2026.04.22</span>
+                <span class="card__meta">2026.01.20</span>
               </div>
-            </article>
+            </a>
 
             <article class="card news-card reveal" data-delay="2">
               <div class="card__media media-frame media-frame--16x9">
@@ -817,7 +956,7 @@
         <div class="footer-bottom">
           <span>© 2026 合同会社ギンガス Gingas LLC. All Rights Reserved.</span>
           <div class="footer-bottom__links">
-            <a href="#">プライバシーポリシー</a>
+            <a href="privacy-policy.html">プライバシーポリシー</a>
             <a href="#">サイトマップ</a>
           </div>
         </div>

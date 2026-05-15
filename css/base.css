@@ -3,6 +3,10 @@ body {
   height: 100%;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--ff-sans);
   font-size: var(--fs-base);
@@ -10,6 +14,7 @@ body {
   background-color: var(--c-bg);
   letter-spacing: 0.02em;
   font-feature-settings: "palt";
+  overflow-x: clip;
 }
 
 main {
@@ -57,11 +62,25 @@ p {
 .container {
   width: min(100% - 2.5rem, var(--container));
   margin-inline: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 1.25rem, var(--container));
+  }
+
+  .container-narrow {
+    width: min(100% - 1.25rem, var(--container-narrow));
+  }
 }
 
 .container-narrow {
   width: min(100% - 2.5rem, var(--container-narrow));
   margin-inline: auto;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .section {

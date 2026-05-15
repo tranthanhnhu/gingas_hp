@@ -26,6 +26,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>http://gingas.co.jp/news/vietnam-healthcare-event.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>http://gingas.co.jp/news/company-overview-2026.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>http://gingas.co.jp/products/tokyo-res-1000.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>http://gingas.co.jp/products/bificure.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>http://gingas.co.jp/privacy-policy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://gingas.co.jp/contact.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>

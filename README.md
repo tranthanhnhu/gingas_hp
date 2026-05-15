@@ -15,7 +15,13 @@ GingasNew/
 ├── services.html           # 事業内容 – OEM/ODM 3 division + 6-step workflow chi tiết
 ├── trade.html              # 輸出入 – Xuất nhập khẩu (4 section + ảnh + video)
 ├── news.html               # お知らせ – Danh sách bài viết (grid 9 + pagination)
-├── contact.html            # お問い合わせ – Form + FAQ + Google Map
+├── news/
+│   ├── vietnam-healthcare-event.html
+│   └── company-overview-2026.html
+├── products/
+│   ├── tokyo-res-1000.html
+│   └── bificure.html
+├── privacy-policy.html
 ├── favicon.png
 ├── robots.txt
 ├── sitemap.xml
@@ -27,7 +33,10 @@ GingasNew/
 │   ├── home.css            # Riêng cho index.html (hero, workflow grid, partners, ...)
 │   └── pages.css           # Riêng cho các trang con (message, trade, services, news, contact)
 ├── js/
-│   └── main.js             # Mobile nav, scroll-reveal, FAQ accordion, lazy video, form validate
+│   ├── main.js             # Mobile nav, scroll-reveal, FAQ accordion, lazy video, form validate
+│   └── site-config.js      # 公式ストア（BASE）URL 等 — 購入リンクの変更はここを編集
+├── docs/
+│   └── pdfs/               # プライバシーポリシー関連 PDF（カスタマーハラスメント方針・マニュアル）
 ├── images/
 │   ├── Takada.png          # Ảnh CEO (đã có)
 │   ├── logo/
@@ -64,7 +73,7 @@ Mọi vị trí thiếu ảnh/video đều có một **khung placeholder** in r�
 | `images/trade/consulting.jpg`                      | Ảnh meeting / consulting              | 4:3             |
 | `videos/port-export-01.mp4`                        | Video ngắn cảng / tàu xuất cảng       | 16:9 (~10–15s)  |
 | `videos/port-export-02.mp4`                        | Video ngắn container / port           | 16:9 (~10–15s) |
-| `images/partners/partner-01.png` … `partner-08.png` | Logo đối tác (nền trong suốt)        | ~5:3            |
+| `images/partners/partner-01.png` … `partner-11.png` | Logo đối tác (nền trong suốt, đúng thứ tự trên trang chủ) | ~5:3            |
 | `images/news/news-01.jpg` … `news-09.jpg`          | Thumbnail bài viết                    | 16:9            |
 
 > Khi thay placeholder bằng `<img>` thực, mở file HTML tương ứng và thay khối:
@@ -94,6 +103,14 @@ Các file sau được sao chép & rename từ `OldWebsite/wp-content/uploads/`:
 | `2025/07/HAI_6592.jpg` … `HAI_8101.jpg`, `NKQ_6433.jpg` | `images/factory/factory-01..05.jpg`          |
 | `2025/05/241007-...press.mp4`                           | `videos/factory-line.mp4`                    |
 | `2025/07/18-reactions-.mp4`                             | `videos/factory-team.mp4`                    |
+| `2025/05/` 認証画像（RES-1000 等）                      | `images/products/certs/*.jpg`                |
+| カスタマーハラスメント関連 PDF（サイト掲載用）          | `docs/pdfs/customer-harassment-*.pdf`        |
+
+---
+
+## 3a. 公式ストア（BASE / official.ec）の URL
+
+自社ブランドの「購入」ボタンは **gingas.official.ec** の商品ページへリンクしています。URL を差し替える場合は **`js/site-config.js`** の `shopTokyoRes1000` と `shopBificure` を編集してください（`products/tokyo-res-1000.html` および `products/bificure.html` は読み込み後にこの値で `href` を上書きします）。
 
 ---
 
@@ -158,6 +175,11 @@ Sau đó truy cập `http://localhost:5500/`.
 | `/services.html`                   | `services.html`   | 事業内容 (OEM/ODM + 6-step workflow) |
 | `/trade.html`                      | `trade.html`      | 輸出入・国際貿易                     |
 | `/news.html`                       | `news.html`       | お知らせ (grid 9 + pagination)        |
+| `/news/vietnam-healthcare-event.html` | `news/vietnam-healthcare-event.html` | お知らせ記事 |
+| `/news/company-overview-2026.html`    | `news/company-overview-2026.html`    | お知らせ記事 |
+| `/products/tokyo-res-1000.html`    | `products/tokyo-res-1000.html` | TOKYO RES-1000 製品詳細 |
+| `/products/bificure.html`          | `products/bificure.html`     | BIFICURE 製品概要 |
+| `/privacy-policy.html`             | `privacy-policy.html` | プライバシーポリシー |
 | `/contact.html`                    | `contact.html`    | お問い合わせ + FAQ + Map             |
 | `/contact.html#faq`                | (anchor)          | FAQ                                  |
 | `/index.html#company`              | (anchor)          | 会社情報                              |
@@ -185,6 +207,6 @@ Sau đó truy cập `http://localhost:5500/`.
 
 - [ ] Bổ sung ảnh / video / logo theo bảng ở mục 2
 - [ ] Tích hợp form gửi mail (Formspree / mailtrap / backend riêng)
-- [ ] Thêm trang chi tiết news (article template)
+- [x] Thêm trang chi tiết news (article template) — `news/*.html`
 - [ ] Bản English / Tiếng Việt (đã có placeholder ở footer)
 - [ ] Convert ảnh sang WebP/AVIF để tăng tốc thêm
