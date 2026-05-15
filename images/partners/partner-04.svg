@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 235 70" style="enable-background:new 0 0 235 70;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+</style>
+<g>
+	<g>
+		<polygon points="60.2,1.9 60.2,12.4 36.8,12.4 36.8,67.9 23.4,67.9 23.4,12.4 0,12.4 0,1.9 		"/>
+			<radialGradient id="SVGID_1_" cx="-3279.4277" cy="-657.6255" r="10.3368" gradientTransform="matrix(3.2446 0 0 3.5479 10734.4277 2368.0532)" gradientUnits="userSpaceOnUse">
+			<stop offset="0" style="stop-color:#0095E1"/>
+			<stop offset="1" style="stop-color:#004797"/>
+		</radialGradient>
+		<path class="st0" d="M129.9,34.9c0,18.7-16.1,33.9-35.9,33.9c-19.8,0-35.9-15.2-35.9-33.9C58.1,16.2,74.2,1,94,1
+			C113.8,1,129.9,16.2,129.9,34.9z"/>
+		<polygon points="160.9,16 140.5,67.9 127.1,67.9 154.3,1.9 167.4,1.9 196.5,67.9 183.1,67.9 		"/>
+	</g>
+		<linearGradient id="svgid0" gradientUnits="userSpaceOnUse" x1="181.0528" y1="67.8772" x2="181.0528" y2="28.8721">
+		<stop offset="0" style="stop-color:#0095E1"/>
+		<stop offset="1" style="stop-color:#004797"/>
+	</linearGradient>
+	<path style="fill:url(#svgid0);" d="M208.5,35.6c7.9,0,16.8,1.2,24.5,3.4
+		c2.3,0.7,2.7-0.2,0.5-1.4c-11-5.6-23.5-8.7-36.8-8.7c-29.5,0-55.3,15.6-69.7,39h13.4C156.4,46.1,180.4,35.6,208.5,35.6z"/>
+</g>
+</svg>
