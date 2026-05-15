@@ -219,31 +219,55 @@
     reveals.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // -------- Lazy video autoplay --------
+  // -------- Lazy video autoplay (iOS-safe with retry) --------
   const videos = $$("video[src], video source[src]").map((el) =>
     el.tagName === "VIDEO" ? el : el.parentElement
   );
+
+  function tryPlay(v, attempts) {
+    if (!v || v.dataset.userPaused === "1") return;
+    v.muted = true;
+    const p = v.play();
+    if (p && typeof p.catch === "function") {
+      p.catch(() => {
+        if (attempts > 0) {
+          setTimeout(() => tryPlay(v, attempts - 1), 350);
+        }
+      });
+    }
+  }
+
   if (videos.length && "IntersectionObserver" in window) {
     const vio = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const v = entry.target;
           if (entry.isIntersecting) {
-            const playPromise = v.play();
-            if (playPromise && typeof playPromise.catch === "function") {
-              playPromise.catch(() => {
-                /* autoplay blocked silently */
-              });
-            }
+            tryPlay(v, 3);
           } else if (!v.paused) {
             v.pause();
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.15 }
     );
     videos.forEach((v) => vio.observe(v));
   }
+
+  // iOS Safari sometimes rejects autoplay before first user interaction:
+  // resume any in-view videos on the first touch / scroll gesture.
+  let kicked = false;
+  function kickPlay() {
+    if (kicked) return;
+    kicked = true;
+    videos.forEach((v) => {
+      const r = v.getBoundingClientRect();
+      const inView = r.top < window.innerHeight && r.bottom > 0;
+      if (inView && v.paused) tryPlay(v, 2);
+    });
+  }
+  window.addEventListener("touchstart", kickPlay, { once: true, passive: true });
+  window.addEventListener("scroll", kickPlay, { once: true, passive: true });
 
   // -------- FAQ accordion smooth close --------
   $$(".faq-item").forEach((item) => {

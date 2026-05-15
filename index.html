@@ -426,14 +426,17 @@
               </a>
             </div>
 
-            <div class="trade__media trade__media--video reveal" data-delay="1">
+            <div class="trade__media trade__media--video reveal">
               <video
                 src="videos/trade_video.mp4"
                 poster="images/factory/factory-02.jpg"
+                autoplay
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                webkit-playsinline
+                disablepictureinpicture
+                preload="auto"
                 aria-label="輸出入・物流のイメージ動画"
               ></video>
             </div>
@@ -537,10 +540,13 @@
             <video
               src="videos/factory-line.mp4"
               poster="images/factory/factory-01.jpg"
+              autoplay
               muted
               loop
               playsinline
-              preload="metadata"
+              webkit-playsinline
+              disablepictureinpicture
+              preload="auto"
               aria-label="工場ライン映像"
             ></video>
           </div>
