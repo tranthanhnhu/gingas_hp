@@ -1,6 +1,6 @@
 # Gingas LLC – Website (HTML/CSS/JS)
 
-Static website cho **合同会社ギンガス (Gingas LLC)** – domain mục tiêu: `http://gingas.co.jp/`.
+Static website cho **合同会社ギンガス (Gingas LLC)** – domain mục tiêu: `https://gingas.co.jp/`.
 
 Toàn bộ site được viết bằng HTML5 + CSS3 hiện đại + Vanilla JS, **không cần build tool**, không phụ thuộc framework. Có thể deploy thẳng lên Hostinger / Nginx / Apache / Netlify / Cloudflare Pages.
 
