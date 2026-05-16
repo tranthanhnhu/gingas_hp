@@ -46,11 +46,11 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/reset.css?v=20260516.3" />
-    <link rel="stylesheet" href="css/variables.css?v=20260516.3" />
-    <link rel="stylesheet" href="css/base.css?v=20260516.3" />
-    <link rel="stylesheet" href="css/components.css?v=20260516.3" />
-    <link rel="stylesheet" href="css/home.css?v=20260516.3" />
+    <link rel="stylesheet" href="css/reset.css?v=20260516.9" />
+    <link rel="stylesheet" href="css/variables.css?v=20260516.9" />
+    <link rel="stylesheet" href="css/base.css?v=20260516.9" />
+    <link rel="stylesheet" href="css/components.css?v=20260516.9" />
+    <link rel="stylesheet" href="css/home.css?v=20260516.9" />
 
     <script type="application/ld+json">
       {
@@ -228,7 +228,8 @@
             </p>
           </div>
 
-          <div class="products-grid">
+          <div class="products-overview">
+            <div class="products-overview__brands">
             <a href="products/bificure.html" class="card reveal">
               <div class="card__media">
                 <img
@@ -243,17 +244,15 @@
               <div class="card__body">
                 <span class="card__tag">Supplement</span>
                 <h3 class="card__title">BIFICURE</h3>
-                <p class="card__text">
-                  ビフィズス菌・乳酸菌を独自配合した次世代腸内環境ケアサプリ。
-                </p>
+                <p class="card__text">腸内環境ケア。詳細・ご購入はこちら。</p>
               </div>
             </a>
 
             <a href="products/tokyo-res-1000.html" class="card reveal" data-delay="1">
               <div class="card__media">
                 <img
-                  src="images/products/product-res-01.jpg"
-                  alt="レスベラトロール健康食品"
+                  src="images/products/product-res.jpg"
+                  alt="TOKYO RES-1000"
                   width="600"
                   height="450"
                   loading="lazy"
@@ -263,51 +262,49 @@
               <div class="card__body">
                 <span class="card__tag">Healthcare</span>
                 <h3 class="card__title">TOKYO RES-1000</h3>
-                <p class="card__text">
-                  乳酸発酵ハナビラタケを採用したプレミアム健康食品ライン。
-                </p>
+                <p class="card__text">乳酸発酵ハナビラタケ。詳細・ご購入はこちら。</p>
               </div>
             </a>
+            </div>
 
-            <a href="services.html" class="card reveal" data-delay="2">
-              <div class="card__media">
-                <img
-                  src="images/products/product-res-02.jpg"
-                  alt="化粧品OEM製品"
-                  width="600"
-                  height="450"
-                  loading="lazy"
-                  decoding="async"
-                />
+            <div class="products-oem reveal" aria-labelledby="products-oem-label">
+              <div class="products-oem__inner">
+                <div class="products-oem__visual">
+                  <img
+                    src="images/services/service-03.jpg"
+                    alt="化粧品・健康食品・医薬部外品のOEM事業"
+                    width="800"
+                    height="412"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <span class="products-oem__shine" aria-hidden="true"></span>
+                </div>
+                <div class="products-oem__content">
+                  <p class="products-oem__label" id="products-oem-label">OEM · ODM</p>
+                  <ul class="products-oem__list">
+                    <li class="products-oem__item">
+                      <span class="products-oem__dot" aria-hidden="true"></span>
+                      <span class="products-oem__title">化粧品 OEM/ODM</span>
+                    </li>
+                    <li class="products-oem__item">
+                      <span class="products-oem__dot" aria-hidden="true"></span>
+                      <span class="products-oem__title">健康食品 OEM/ODM</span>
+                    </li>
+                    <li class="products-oem__item">
+                      <span class="products-oem__dot" aria-hidden="true"></span>
+                      <span class="products-oem__title">医薬部外品・医薬品支援</span>
+                    </li>
+                  </ul>
+                  <a href="services.html" class="btn btn--outline products-oem__cta">
+                    事業内容を見る
+                    <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </a>
+                </div>
               </div>
-              <div class="card__body">
-                <span class="card__tag">Cosmetics</span>
-                <h3 class="card__title">Cosmetic OEM</h3>
-                <p class="card__text">
-                  ブランドコンセプトから処方設計まで一貫対応する化粧品開発。
-                </p>
-              </div>
-            </a>
-
-            <a href="services.html" class="card reveal" data-delay="3">
-              <div class="card__media">
-                <img
-                  src="images/products/product-res-04.jpg"
-                  alt="医薬品関連製造"
-                  width="600"
-                  height="450"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="card__body">
-                <span class="card__tag">Pharma</span>
-                <h3 class="card__title">Pharma Support</h3>
-                <p class="card__text">
-                  医薬部外品・健康関連製品の処方開発と各国法規制対応。
-                </p>
-              </div>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -797,7 +794,7 @@
               </div>
             </a>
 
-            <article class="card news-card reveal" data-delay="2">
+            <!-- <article class="card news-card reveal" data-delay="2">
               <div class="card__media media-frame media-frame--16x9">
                 <div class="media-frame__label">
                   images/news/news-03.jpg<span>16:9 サムネイル</span>
@@ -813,7 +810,7 @@
                 </p>
                 <span class="card__meta">2026.03.18</span>
               </div>
-            </article>
+            </article> -->
           </div>
 
           <div style="text-align: center; margin-top: 2.4rem">
@@ -1007,6 +1004,6 @@
       </div>
     </footer>
 
-    <script src="js/main.js?v=20260516.3" defer></script>
+    <script src="js/main.js?v=20260516.9" defer></script>
   </body>
 </html>
