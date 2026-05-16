@@ -243,6 +243,29 @@
   aspect-ratio: 16 / 9;
 }
 
+.trade-media-row .media-frame:has(> img),
+.trade-grid .media-frame:has(> img),
+.trade-video-row .media-frame:has(> video) {
+  border: 1px solid var(--c-border);
+  background: var(--c-navy-50);
+}
+
+.trade-media-row .media-frame:has(> img)::before,
+.trade-grid .media-frame:has(> img)::before,
+.trade-video-row .media-frame:has(> video)::before {
+  display: none;
+}
+
+.media-frame > video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: inherit;
+}
+
 @media (max-width: 880px) {
   .trade-grid {
     grid-template-columns: 1fr;

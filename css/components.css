@@ -725,14 +725,32 @@ body.is-nav-open .back-to-top {
   justify-content: center;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.75);
   margin-bottom: 1rem;
 }
 
-.breadcrumb a:hover {
+.breadcrumb a {
   color: var(--c-emerald-400);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  color: var(--c-emerald-300);
+  text-decoration: underline;
+}
+
+.breadcrumb a:focus-visible {
+  outline: 2px solid var(--c-emerald-400);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 .breadcrumb span[aria-hidden="true"] {
   color: rgba(255, 255, 255, 0.35);
+}
+
+.breadcrumb > span:not([aria-hidden="true"]) {
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
 }
