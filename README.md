@@ -38,7 +38,7 @@ GingasNew/
 ├── docs/
 │   └── pdfs/               # プライバシーポリシー関連 PDF（カスタマーハラスメント方針・マニュアル）
 ├── images/
-│   ├── Takada.png          # Ảnh CEO (đã có)
+│   ├── Takada.jpg          # Ảnh CEO (đã có)
 │   ├── logo/
 │   ├── hero/
 │   ├── products/
