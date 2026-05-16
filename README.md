@@ -158,6 +158,33 @@ npx serve .
 
 Sau đó truy cập `http://localhost:5500/`.
 
+### Cache busting (CSS / JS)
+
+File **`VERSION`** được gắn vào mọi link `css/*.css?v=…` và `js/*.js?v=…` trong HTML.
+
+**Nhiều commit trong cùng một ngày:** mỗi lần chạy script sẽ **tự tăng** số thứ tự:
+
+| Lần chạy (cùng ngày) | VERSION      |
+| -------------------- | ------------ |
+| 1                    | `20260516.1` |
+| 2                    | `20260516.2` |
+| 3                    | `20260516.3` |
+
+Ngày mới → bắt đầu lại từ `YYYYMMDD.1`.
+
+```powershell
+# Trước mỗi commit có đổi CSS/JS:
+.\scripts\bump-asset-version.ps1
+
+# Ghi đè version tùy ý:
+.\scripts\bump-asset-version.ps1 -Version 20260516.9
+
+# Reset về .1 trong ngày hôm nay:
+.\scripts\bump-asset-version.ps1 -ResetToday
+```
+
+Trình duyệt sẽ tải lại CSS/JS vì URL đổi (`?v=20260516.2` khác `?v=20260516.1`).
+
 ### Deploy
 
 - Upload toàn bộ thư mục **trừ** `OldWebsite/`, `*.txt` (loichaogiamdoc, xuatnhapkhau, summary), `design.png` lên public_html của hosting.
