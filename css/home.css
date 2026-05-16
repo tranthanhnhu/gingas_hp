@@ -47,35 +47,12 @@
   z-index: -2;
 }
 
-.hero__slides {
-  position: absolute;
-  inset: 0;
-}
-
-.hero__slide {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  opacity: 0;
-  transition: opacity 1.15s ease-in-out;
-  pointer-events: none;
-}
-
-.hero__slide.is-active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.hero__slide img {
+.hero__bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   filter: saturate(0.88) brightness(0.97);
-  transform: scale(1);
-}
-
-.hero__slide.is-active img {
   animation: heroKenBurns 18s ease-out forwards;
 }
 
@@ -88,69 +65,14 @@
   }
 }
 
-.hero__dots {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 1.1rem;
-  list-style: none;
-}
-
-.hero__dot {
-  appearance: none;
-  border: 0;
-  margin: 0;
-  padding: 0.5rem;
-  min-width: 2.75rem;
-  min-height: 2.75rem;
-  display: inline-grid;
-  place-items: center;
-  cursor: pointer;
-  background: transparent;
-  color: inherit;
-  border-radius: var(--radius-md);
-}
-
-.hero__dot:focus-visible {
-  outline: 2px solid var(--c-emerald-400);
-  outline-offset: 2px;
-}
-
-.hero__dot::after {
-  content: "";
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.38);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
-  transition: transform 0.25s var(--ease-out), background 0.25s var(--ease-out), box-shadow 0.25s;
-}
-
-.hero__dot.is-active::after {
-  background: var(--c-emerald-400);
-  box-shadow: 0 0 0 6px rgba(16, 185, 129, 0.22);
-  transform: scale(1.2);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero__ambient {
     animation: none;
     opacity: 0.65;
   }
 
-  .hero__slide img {
+  .hero__bg img {
     animation: none !important;
-  }
-
-  .hero__slide:not(.is-active) {
-    opacity: 0 !important;
-    transition: none;
-  }
-
-  .hero__dots {
-    display: none;
   }
 }
 
@@ -703,7 +625,7 @@
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
 }
 
 .trade__media--video video {
@@ -756,9 +678,6 @@
 @media (max-width: 880px) {
   .trade {
     grid-template-columns: 1fr;
-  }
-  .trade__media {
-    aspect-ratio: 16 / 9;
   }
 }
 
