@@ -268,28 +268,4 @@
     window.scrollTo({ top, behavior: "smooth" });
   });
 
-  // -------- Contact form basic validation (client-side only) --------
-  const form = $("#contactForm");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      let isValid = true;
-      $$("input,textarea,select", form).forEach((field) => {
-        if (field.hasAttribute("required") && !field.value.trim()) {
-          field.style.borderColor = "#ef4444";
-          isValid = false;
-        } else {
-          field.style.borderColor = "";
-        }
-      });
-      if (!isValid) {
-        alert("必須項目をご入力ください。");
-        return;
-      }
-      alert(
-        "お問い合わせありがとうございます。担当者より2営業日以内にご返信いたします。"
-      );
-      form.reset();
-    });
-  }
 })();

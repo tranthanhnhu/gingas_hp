@@ -19,12 +19,12 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/reset.css?v=20260519.2" />
-    <link rel="stylesheet" href="css/variables.css?v=20260519.2" />
-    <link rel="stylesheet" href="css/base.css?v=20260519.2" />
-    <link rel="stylesheet" href="css/components.css?v=20260519.2" />
-    <link rel="stylesheet" href="css/home.css?v=20260519.2" />
-    <link rel="stylesheet" href="css/pages.css?v=20260519.2" />
+    <link rel="stylesheet" href="css/reset.css?v=20260519.3" />
+    <link rel="stylesheet" href="css/variables.css?v=20260519.3" />
+    <link rel="stylesheet" href="css/base.css?v=20260519.3" />
+    <link rel="stylesheet" href="css/components.css?v=20260519.3" />
+    <link rel="stylesheet" href="css/home.css?v=20260519.3" />
+    <link rel="stylesheet" href="css/pages.css?v=20260519.3" />
   </head>
   <body class="contact-page">
     <a href="#main" class="sr-only">本文へスキップ</a>
@@ -63,79 +63,18 @@
           <span class="page-hero__eyebrow">CONTACT US</span>
           <h1 class="page-hero__title">お問い合わせ</h1>
           <p class="page-hero__lead">
-            ご相談・お見積もり・パートナーシップに関するお問い合わせは、下記フォームよりご連絡ください。
+            ご相談・お見積もり・パートナーシップに関するお問い合わせは、お電話またはメールにて承ります。
           </p>
         </div>
       </section>
 
       <section class="article">
         <div class="container">
-          <div class="contact-grid">
-            <form class="contact-form reveal" id="contactForm" novalidate>
-              <div class="field">
-                <label for="cf-name">お名前 <span aria-hidden="true">*</span></label>
-                <input type="text" id="cf-name" name="name" required autocomplete="name" />
-              </div>
+          <p class="contact-notice reveal">
+            ウェブフォームからの送信機能は現在準備中です。お手数ですが、下記のお電話またはメールアドレスよりご連絡ください。
+          </p>
 
-              <div class="field--row">
-                <div class="field">
-                  <label for="cf-company">会社名</label>
-                  <input type="text" id="cf-company" name="company" autocomplete="organization" />
-                </div>
-                <div class="field">
-                  <label for="cf-position">役職</label>
-                  <input type="text" id="cf-position" name="position" />
-                </div>
-              </div>
-
-              <div class="field--row">
-                <div class="field">
-                  <label for="cf-email">メールアドレス <span aria-hidden="true">*</span></label>
-                  <input type="email" id="cf-email" name="email" required autocomplete="email" />
-                </div>
-                <div class="field">
-                  <label for="cf-phone">電話番号</label>
-                  <input type="tel" id="cf-phone" name="phone" autocomplete="tel" />
-                </div>
-              </div>
-
-              <div class="field">
-                <label for="cf-category">お問い合わせ種別 <span aria-hidden="true">*</span></label>
-                <select id="cf-category" name="category" required>
-                  <option value="">選択してください</option>
-                  <option>製品開発（OEM/ODM）</option>
-                  <option>輸出入・国際貿易</option>
-                  <option>原材料調達</option>
-                  <option>パートナーシップ</option>
-                  <option>取材・メディア</option>
-                  <option>採用に関するお問い合わせ</option>
-                  <option>その他</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="cf-message">お問い合わせ内容 <span aria-hidden="true">*</span></label>
-                <textarea id="cf-message" name="message" rows="6" required></textarea>
-              </div>
-
-              <label class="checkbox-field">
-                <input type="checkbox" required />
-                <span>
-                  <a href="privacy-policy.html" style="color: var(--c-emerald-700); text-decoration: underline">プライバシーポリシー</a>に同意の上、送信します。
-                </span>
-              </label>
-
-              <div style="margin-top: 0.5rem">
-                <button type="submit" class="btn btn--primary" style="width: 100%">
-                  送信する
-                  <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
-                    <path d="M5 12h14M13 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
-            </form>
-
-            <aside class="contact-info">
+          <div class="contact-info contact-info--page">
               <div class="contact-card reveal">
                 <div class="contact-card__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -145,8 +84,8 @@
                 <div>
                   <h3>お電話でのお問い合わせ</h3>
                   <p>
-                    03-5530-8174（English available）<br />
-                    03-6823-9023<br />
+                    <a href="tel:+81355308174">03-5530-8174</a>（English available）<br />
+                    <a href="tel:+81368239023">03-6823-9023</a><br />
                     平日 9:00〜18:00（土日祝休業）
                   </p>
                 </div>
@@ -177,15 +116,16 @@
                   </svg>
                 </div>
                 <div>
-                  <h3>メール</h3>
+                  <h3>メールでのお問い合わせ</h3>
                   <p>
-                    info@gingas.co.jp<br />
-                    24時間受付（営業日内に返信）
+                    <a href="mailto:info@gingas.jp">info@gingas.jp</a><br />
+                    <a href="mailto:gingasllc@gingas.jp">gingasllc@gingas.jp</a>
                   </p>
+                  <p class="contact-card__note">いずれかの宛先までご連絡ください（営業日内に返信）</p>
                 </div>
               </div>
 
-              <div class="contact-map reveal" data-delay="3">
+            <div class="contact-map reveal" data-delay="3">
                 <iframe
                   title="Gingas LLC 本社所在地 - 有明フロンティアビル"
                   src="https://www.google.com/maps?q=Ariake+Frontier+Building+B,+3-7-26+Ariake,+Koto-ku,+Tokyo&output=embed"
@@ -193,7 +133,6 @@
                   referrerpolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
-            </aside>
           </div>
         </div>
       </section>
@@ -314,6 +253,6 @@
       </div>
     </footer>
 
-    <script src="js/main.js?v=20260519.2" defer></script>
+    <script src="js/main.js?v=20260519.3" defer></script>
   </body>
 </html>
