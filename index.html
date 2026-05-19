@@ -46,11 +46,11 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/reset.css?v=20260516.11" />
-    <link rel="stylesheet" href="css/variables.css?v=20260516.11" />
-    <link rel="stylesheet" href="css/base.css?v=20260516.11" />
-    <link rel="stylesheet" href="css/components.css?v=20260516.11" />
-    <link rel="stylesheet" href="css/home.css?v=20260516.11" />
+    <link rel="stylesheet" href="css/reset.css?v=20260519.1" />
+    <link rel="stylesheet" href="css/variables.css?v=20260519.1" />
+    <link rel="stylesheet" href="css/base.css?v=20260519.1" />
+    <link rel="stylesheet" href="css/components.css?v=20260519.1" />
+    <link rel="stylesheet" href="css/home.css?v=20260519.1" />
 
     <script type="application/ld+json">
       {
@@ -512,7 +512,11 @@
       </section>
 
       <!-- ====== PARTNERS ====== -->
-      <section class="section section--alt" aria-labelledby="partners-title">
+      <section
+        class="section section--alt partners-section"
+        aria-labelledby="partners-title"
+        data-partners-expand
+      >
         <div class="container">
           <div class="section__head">
             <span class="section__eyebrow">OUR PARTNERS</span>
@@ -522,7 +526,7 @@
             </p>
           </div>
 
-          <div class="partners-grid">
+          <div class="partners-grid partners-grid--primary">
             <div class="partner reveal">
               <div class="partner__logo">
                 <img
@@ -679,33 +683,99 @@
               </div>
               <span class="partner__name">Aristino</span>
             </div>
-            <div class="partner reveal">
-              <div class="partner__logo">
-                <img
-                  src="images/partners/partner-12.png"
-                  alt="Minh Ngoc Medical"
-                  width="320"
-                  height="192"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="partner__name">Minh Ngoc Medical</span>
-            </div>
-            <!-- <div class="partner reveal">
-              <div class="partner__logo">
-                <img
-                  src="images/partners/partner-11.png"
-                  alt="アリスチーノ"
-                  width="320"
-                  height="192"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <span class="partner__name">アリスチーノ</span>
-            </div> -->
           </div>
+
+          <div class="partners-more" id="partnersMore">
+            <div class="partners-more__inner">
+              <div class="partners-grid">
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-12.png" alt="Minh Ngoc Medical" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">Minh Ngoc Medical</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-tokyo-glass.svg" alt="東京硝子株式会社" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">東京硝子株式会社</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-shiobara-horos.jpg" alt="塩原ホロスクリニック" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">塩原ホロスクリニック</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-jfabc.png" alt="一般財団法人日本食品分析センター" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">一般財団法人日本食品分析センター</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-futaba-mark.png" alt="フタバマーク株式会社" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">フタバマーク株式会社</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-takemoto-youki.png" alt="竹本容器株式会社" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">竹本容器株式会社</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-ixlab.png" alt="株式会社イクスラボ" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">株式会社イクスラボ</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-amazon.png" alt="アマゾンジャパン合同会社" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">アマゾンジャパン合同会社</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-kowa-technoresearch.png" alt="株式会社コーワテクノサーチ" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">株式会社コーワテクノサーチ</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-ukishima-medical.png" alt="ウキシマメディカル株式会社" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">ウキシマメディカル株式会社</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-cabinet.png" alt="合資会社キャビネット" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">合資会社キャビネット</span>
+                </div>
+                <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-august-planning.png" alt="株式会社オーガストプランニングサービス" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">株式会社オーガストプランニングサービス</span>
+                </div>
+                <!-- <div class="partner reveal">
+                  <div class="partner__logo">
+                    <img src="images/partners/partner-resmarine.png" alt="合同会社レスマリーヌ" width="320" height="192" loading="lazy" decoding="async" />
+                  </div>
+                  <span class="partner__name">合同会社レスマリーヌ</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="partners-toggle" aria-expanded="false" aria-controls="partnersMore">
+            <span class="partners-toggle__label">もっと見る</span>
+            <svg class="partners-toggle__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
         </div>
       </section>
 
@@ -977,6 +1047,6 @@
       </div>
     </footer>
 
-    <script src="js/main.js?v=20260516.11" defer></script>
+    <script src="js/main.js?v=20260519.1" defer></script>
   </body>
 </html>

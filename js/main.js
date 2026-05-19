@@ -15,6 +15,43 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  // -------- Partners expand (index) --------
+  function initPartnersExpand() {
+    const section = document.querySelector("[data-partners-expand]");
+    if (!section) return;
+
+    const toggle = section.querySelector(".partners-toggle");
+    const more = section.querySelector("#partnersMore");
+    const label = section.querySelector(".partners-toggle__label");
+    if (!toggle || !more) return;
+
+    const labelMore = label?.dataset.labelMore || "もっと見る";
+    const labelLess = label?.dataset.labelLess || "閉じる";
+
+    function revealMorePartners() {
+      more.querySelectorAll(".reveal").forEach((el) => {
+        el.classList.add("is-visible");
+      });
+    }
+
+    function setExpanded(expanded) {
+      section.classList.toggle("is-expanded", expanded);
+      toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+      if (label) label.textContent = expanded ? labelLess : labelMore;
+      if (expanded) revealMorePartners();
+    }
+
+    toggle.addEventListener("click", () => {
+      const next = !section.classList.contains("is-expanded");
+      setExpanded(next);
+      if (next) {
+        toggle.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    });
+  }
+
+  initPartnersExpand();
+
   // -------- Mobile navigation + backdrop --------
   const navToggle = $("#navToggle");
   const siteNav = $("#siteNav");
