@@ -805,6 +805,104 @@
   border: 0;
 }
 
+/* News article — hero + photo gallery */
+.article-hero {
+  margin: 0 0 2rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+}
+
+.article-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.article-hero figcaption {
+  margin: 0;
+  padding: 1rem 1.15rem 1.15rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--c-text-muted);
+  text-align: center;
+  border-top: 1px solid var(--c-border);
+  background: linear-gradient(180deg, var(--c-navy-50) 0%, var(--c-white) 100%);
+}
+
+.article-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-gallery__item {
+  margin: 0;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-white);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out);
+}
+
+.article-gallery__item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.article-gallery__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.45s var(--ease-out);
+}
+
+.article-gallery__item:hover img {
+  transform: scale(1.02);
+}
+
+.article-gallery__item figcaption {
+  margin: 0;
+  padding: 0.85rem 0.9rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  text-align: center;
+  color: var(--c-text-muted);
+}
+
+@media (max-width: 640px) {
+  .article-gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-gallery__item,
+  .article-gallery__item img {
+    transition: none;
+  }
+
+  .article-gallery__item:hover {
+    transform: none;
+  }
+
+  .article-gallery__item:hover img {
+    transform: none;
+  }
+}
+
 .cert-gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
