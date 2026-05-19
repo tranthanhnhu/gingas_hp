@@ -694,6 +694,15 @@
   flex-shrink: 0;
 }
 
+/* reset.css sets svg { height: auto } — Safari iOS collapses stroke icons without explicit size */
+.contact-card__icon svg {
+  width: 22px;
+  height: 22px;
+  max-width: none;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
 .contact-card h3 {
   font-size: 0.95rem;
   margin-bottom: 0.3rem;
