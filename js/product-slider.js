@@ -17,8 +17,81 @@
     var counter = root.querySelector(".product-slider__counter");
     var index = 0;
     var multi = slides.length > 1;
+    var lazyReady = false;
 
     root.classList.toggle("is-single", !multi);
+
+    function prepareLazyImages() {
+      slides.forEach(function (slide) {
+        var img = slide.querySelector("img");
+        if (!img) return;
+        var url = img.getAttribute("data-src") || img.getAttribute("src");
+        if (!url) return;
+        img.dataset.src = url;
+        img.removeAttribute("src");
+        img.removeAttribute("loading");
+        img.classList.add("product-slider__img--lazy");
+      });
+    }
+
+    function ensureImageLoaded(i) {
+      if (i < 0 || i >= slides.length) return;
+      var img = slides[i].querySelector("img");
+      if (!img || !img.dataset.src) return;
+      if (img.dataset.loaded === "1") return;
+
+      img.dataset.loaded = "loading";
+      img.addEventListener(
+        "load",
+        function onLoad() {
+          img.removeEventListener("load", onLoad);
+          img.classList.remove("product-slider__img--lazy");
+          img.dataset.loaded = "1";
+        },
+        { once: true }
+      );
+      img.addEventListener(
+        "error",
+        function onErr() {
+          img.removeEventListener("error", onErr);
+          img.dataset.loaded = "error";
+        },
+        { once: true }
+      );
+      img.src = img.dataset.src;
+    }
+
+    function preloadNearby(center) {
+      ensureImageLoaded(center);
+      ensureImageLoaded(center + 1);
+      ensureImageLoaded(center - 1);
+    }
+
+    function activateLazy() {
+      if (lazyReady) return;
+      lazyReady = true;
+      preloadNearby(index);
+    }
+
+    if (slides.some(function (s) { return s.querySelector("img"); })) {
+      prepareLazyImages();
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                activateLazy();
+                io.disconnect();
+              }
+            });
+          },
+          { rootMargin: "280px 0px", threshold: 0.01 }
+        );
+        io.observe(root);
+      } else {
+        activateLazy();
+      }
+    }
 
     if (multi && dotsWrap) {
       slides.forEach(function (_, i) {
@@ -60,6 +133,7 @@
         behavior: motion(),
       });
       syncUi();
+      if (lazyReady) preloadNearby(index);
     }
 
     if (prevBtn) {
@@ -97,6 +171,7 @@
           if (closest !== index) {
             index = closest;
             syncUi();
+            if (lazyReady) preloadNearby(index);
           }
         }, 60);
       },

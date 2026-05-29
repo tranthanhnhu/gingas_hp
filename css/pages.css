@@ -819,6 +819,13 @@
   padding-top: 0;
 }
 
+.product-detail__intro h3 {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--c-navy-800);
+  margin: 1.25rem 0 0.5rem;
+}
+
 .product-video-wrap {
   position: relative;
   width: 100%;
@@ -885,6 +892,21 @@
 
 .product-detail .product-slider .product-slider__slide {
   padding: 1.25rem 2.5rem;
+}
+
+.product-slider__img--lazy {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.product-slider__slide img:not(.product-slider__img--lazy) {
+  opacity: 1;
+}
+
+.product-slider__slide img[data-loaded="loading"].product-slider__img--lazy,
+.product-slider__slide img.product-slider__img--lazy {
+  background: var(--c-navy-50);
+  min-height: 120px;
 }
 
 .article-gallery--contain .article-gallery__item img {
@@ -1010,15 +1032,26 @@
 
 .cert-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
   margin-top: 0;
-  max-width: 960px;
+  max-width: 720px;
   margin-inline: auto;
+}
+
+/* 5枚以上 — 3列（TOKYO RES-1000 など） */
+.cert-gallery:has(> figure:nth-child(5)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 960px;
 }
 
 @media (max-width: 768px) {
   .cert-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 100%;
+  }
+
+  .cert-gallery:has(> figure:nth-child(5)) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

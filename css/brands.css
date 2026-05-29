@@ -524,6 +524,16 @@
   -webkit-user-drag: none;
 }
 
+.product-slider__img--lazy {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: var(--c-navy-50);
+}
+
+.product-slider__slide img:not(.product-slider__img--lazy) {
+  opacity: 1;
+}
+
 .product-slider__btn {
   position: absolute;
   top: 50%;
