@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="../css/variables.css?v=20260519.3" />
     <link rel="stylesheet" href="../css/base.css?v=20260519.3" />
     <link rel="stylesheet" href="../css/components.css?v=20260519.3" />
-    <link rel="stylesheet" href="../css/pages.css?v=20260519.3" />
+    <link rel="stylesheet" href="../css/pages.css?v=20260530.2" />
+    <link rel="stylesheet" href="../css/brands.css?v=20260530.1" />
   </head>
   <body class="services-page">
     <a href="#main" class="sr-only">本文へスキップ</a>
@@ -89,23 +90,54 @@
             </p>
           </div>
 
-          <div class="product-video-wrap reveal" data-delay="1">
-            <iframe
-              src="https://www.youtube.com/embed/vXcdm9OKLBg"
-              title="株式会社かつらぎ産業 紹介動画（乳酸発酵ハナビラタケ）"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
+          <section class="product-detail__section reveal" aria-labelledby="product-images-heading">
+            <div class="product-slider" data-product-slider tabindex="0">
+              <div class="product-slider__viewport">
+                <div class="product-slider__track">
+                  <div class="product-slider__slide">
+                    <img src="../images/products/tokyores1000/tokyores_1.jpg" alt="TOKYO RES-1000 製品・受賞 1" width="800" height="600" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="product-slider__slide">
+                    <img src="../images/products/tokyores1000/tokyores_2.jpg" alt="TOKYO RES-1000 製品・受賞 2" width="800" height="600" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="product-slider__slide">
+                    <img src="../images/products/tokyores1000/tokyores_3.jpg" alt="TOKYO RES-1000 証書・表彰 3" width="800" height="600" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="product-slider__slide">
+                    <img src="../images/products/tokyores1000/tokyores_4.jpg" alt="TOKYO RES-1000 製造・品質管理 4" width="800" height="600" loading="lazy" decoding="async" />
+                  </div>
+                  <div class="product-slider__slide">
+                    <img src="../images/products/tokyores1000/tokyores_5.jpg" alt="TOKYO RES-1000 製造・品質管理 5" width="800" height="600" loading="lazy" decoding="async" />
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="product-slider__btn product-slider__btn--prev" aria-label="前の画像"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <button type="button" class="product-slider__btn product-slider__btn--next" aria-label="次の画像"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+              <div class="product-slider__footer">
+                <div class="product-slider__dots" role="tablist"></div>
+                <span class="product-slider__counter" aria-live="polite"></span>
+              </div>
+            </div>
+          </section>
 
-          <div class="product-detail__intro reveal" data-delay="1">
-            <p>
-              <strong>TOKYO RES-1000</strong>製品は、<strong>株式会社かつらぎ産業</strong>からの正規ライセンス原料供給を受けて製品化しております。
-            </p>
-          </div>
+          <section class="product-detail__section reveal" aria-labelledby="video-katsuragi-heading">
+            <h2 id="video-katsuragi-heading">紹介動画</h2>
+            <p class="product-detail__section-lead">株式会社かつらぎ産業による、乳酸発酵ハナビラタケの紹介映像です。</p>
+            <div class="product-video-wrap">
+              <iframe
+                src="https://www.youtube.com/embed/vXcdm9OKLBg"
+                title="株式会社かつらぎ産業 紹介動画（乳酸発酵ハナビラタケ）"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </section>
 
-          <div class="cert-gallery reveal" data-delay="2">
+          <section class="product-detail__section reveal" aria-labelledby="certs-heading">
+            <h2 id="certs-heading">品質・登録・特許</h2>
+            <p class="product-detail__section-lead">品種登録、特許、GMP、商標登録など、製品の信頼性を裏付ける証明・表彰の一部を掲載しています。</p>
+            <div class="cert-gallery">
             <figure>
               <img
                 src="../images/products/certs/202205061729334132.jpg"
@@ -150,7 +182,181 @@
               />
               <figcaption>和歌山県「1社1元気技術」</figcaption>
             </figure>
+            <figure>
+              <img
+                src="../images/products/certs/tokyores1000_gmp.jpg"
+                alt="JHNFA GMP 適合証明書"
+                width="400"
+                height="520"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>JHNFA GMP 適合証明</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="../images/products/certs/tokyosupplent.jpg"
+                alt="商標登録証 TOKYO supplement"
+                width="400"
+                height="520"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>商標登録証（TOKYO supplement）</figcaption>
+            </figure>
+            </div>
+          </section>
+
+          <section class="product-detail__section reveal" aria-labelledby="video-vtv9-heading">
+            <h2 id="video-vtv9-heading">メディア報道</h2>
+            <p class="product-detail__section-lead">
+              ベトナムのテレビ局 VTV9 にて、ヘルスケア関連の報道が放送されました。合同会社ギンガスも参加・紹介されています。
+            </p>
+            <div class="product-video-wrap product-video-wrap--native">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                poster="../images/products/tokyores1000/tokyores_event_1.jpg"
+                title="VTV9 ヘルスケア報道（Gingas 参加）"
+              >
+                <source src="../videos/vtv9_video.mp4" type="video/mp4" />
+                お使いのブラウザは動画の再生に対応していません。
+              </video>
+            </div>
+          </section>
+
+          <div class="product-detail__intro reveal" data-delay="1">
+            <p>
+              <strong>TOKYO RES-1000</strong>製品は、<strong>株式会社かつらぎ産業</strong>からの正規ライセンス原料供給を受けて製品化しております。
+            </p>
           </div>
+
+          <section class="product-detail__section reveal" aria-labelledby="hospital-k-heading">
+            <h2 id="hospital-k-heading">ベトナムK病院での取り扱い</h2>
+            <p class="product-detail__section-lead">
+              ベトナムのK病院において、TOKYO RES-1000 が院内で取り扱われています。
+            </p>
+            <div class="article-gallery article-gallery--cols-1">
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_hospital_K_1.jpg"
+                  alt="ベトナムK病院 製品陳列 1"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>院内売店・陳列コーナーでの展開（1）</figcaption>
+              </figure>
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_hospital_K_2.jpg"
+                  alt="ベトナムK病院 製品陳列 2"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>院内売店・陳列コーナーでの展開（2）</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="product-detail__section reveal" aria-labelledby="authors-heading">
+            <h2 id="authors-heading">開発・研究の歩み</h2>
+            <p class="product-detail__section-lead">
+              乳酸発酵ハナビラタケの研究・開発に携わる専門家による、技術的な討議・研究の様子です。
+            </p>
+            <div class="article-gallery article-gallery--contain">
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_author_2.jpg"
+                  alt="開発者による技術討議 1"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>研究データをもとにした技術討議</figcaption>
+              </figure>
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_author_1.jpg"
+                  alt="開発者による技術討議 2"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>論文・研究成果の共有</figcaption>
+              </figure>
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_author_3.jpg"
+                  alt="研究施設での開発風景"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>研究施設における分析・開発</figcaption>
+              </figure>
+            </div>
+          </section>
+
+          <section class="product-detail__section reveal" aria-labelledby="symposium-heading">
+            <h2 id="symposium-heading">日越科学シンポジウム</h2>
+            <p class="product-detail__section-lead">
+              ベトナム・日本科学シンポジウムにおいて、KLB-1 乳酸菌発酵技術による免疫ハナビラタケ（Sparassis crispa）の応用、TOKYO RES-1000 の処方化、および腫瘍治療支援に関するテーマが報告されました。
+            </p>
+            <div class="article-gallery">
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_event_1.jpg"
+                  alt="日越科学シンポジウム 集合写真"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>シンポジウム開催（集合写真）</figcaption>
+              </figure>
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_event_2.jpg"
+                  alt="日越科学シンポジウム 握手・協力"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>協力に関するセレモニー</figcaption>
+              </figure>
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_event_3.jpg"
+                  alt="日越科学シンポジウム 講演"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>講演・発表の様子</figcaption>
+              </figure>
+              <figure class="article-gallery__item">
+                <img
+                  src="../images/products/tokyores1000/tokyores_event_4.jpg"
+                  alt="日越科学シンポジウム 会場"
+                  width="960"
+                  height="640"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>会場全景・参加者</figcaption>
+              </figure>
+            </div>
+          </section>
 
           <div class="product-cta-row reveal">
             <a
@@ -231,6 +437,7 @@
         if (cfg && cfg.shopTokyoRes1000 && el) el.href = cfg.shopTokyoRes1000;
       })();
     </script>
+    <script src="../js/product-slider.js?v=20260530.1" defer></script>
     <script src="../js/main.js?v=20260519.3" defer></script>
   </body>
 </html>

@@ -406,6 +406,11 @@
 }
 
 .own-brand-intro__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
 }
 
@@ -834,6 +839,65 @@
   border: 0;
 }
 
+.product-video-wrap--native video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.product-detail__section {
+  max-width: 880px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.product-detail__section h2 {
+  font-size: var(--fs-xl);
+  color: var(--c-navy-800);
+  margin: 0 0 0.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--c-border);
+}
+
+.product-detail__section:first-of-type h2 {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.product-detail__section-lead {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.75;
+  margin: 0 0 1.25rem;
+}
+
+.product-detail .product-slider {
+  --slider-frame-h: clamp(280px, 55vw, 380px);
+  max-width: 720px;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow-md);
+}
+
+.product-detail .product-slider .product-slider__slide {
+  padding: 1.25rem 2.5rem;
+}
+
+.article-gallery--contain .article-gallery__item img {
+  object-fit: contain;
+  background: var(--c-navy-50);
+}
+
+.article-gallery--cols-1 {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
 /* News article — hero + photo gallery */
 .article-hero {
   margin: 0 0 2rem;
@@ -867,6 +931,18 @@
   gap: 1.25rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  justify-items: stretch;
+}
+
+/* Lưới 2 cột — card lẻ cuối (vd. 3 ảnh) căn giữa */
+@media (min-width: 641px) {
+  .article-gallery:not(.article-gallery--cols-1)
+    .article-gallery__item:last-child:nth-child(odd):not(:only-child) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: calc((100% - 1.25rem) / 2);
+  }
 }
 
 .article-gallery__item {
@@ -934,9 +1010,9 @@
 
 .cert-gallery {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 0;
   max-width: 960px;
   margin-inline: auto;
 }

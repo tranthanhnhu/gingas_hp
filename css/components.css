@@ -46,6 +46,21 @@
   border-color: var(--c-white);
 }
 
+/* Navy + emerald — logo tones, for light sections */
+.btn--brand-soft {
+  background: linear-gradient(135deg, var(--c-navy-50) 0%, var(--c-emerald-100) 100%);
+  color: var(--c-navy-700);
+  border-color: color-mix(in srgb, var(--c-navy-500) 28%, var(--c-emerald-500) 42%);
+  box-shadow: 0 4px 14px rgba(26, 54, 93, 0.1);
+}
+
+.btn--brand-soft:hover {
+  background: linear-gradient(135deg, #e3ecf8 0%, #b8ecd8 100%);
+  color: var(--c-navy-800);
+  border-color: var(--c-emerald-500);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.18);
+}
+
 .btn--outline {
   background: transparent;
   color: var(--c-navy-700);
