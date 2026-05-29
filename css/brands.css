@@ -1,0 +1,926 @@
+/* ============== Brands index ============== */
+.brands-page {
+  --brand-accent: var(--c-gold);
+}
+
+.brands-intro {
+  max-width: 42rem;
+}
+
+.brands-index__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .brands-index__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .brands-index__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands-index__grid .brand-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 0.875rem);
+    justify-self: center;
+  }
+}
+
+.brand-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out);
+}
+
+.brand-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--brand-card-accent, var(--c-emerald-500)) 35%, transparent);
+}
+
+.brand-card__visual {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--c-navy-50);
+  overflow: hidden;
+}
+
+.brand-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+
+/* Logo / emblem vuông — thu nhỏ, căn giữa (Aristino, v.v.) */
+.brand-card__visual--contain img {
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  box-sizing: border-box;
+}
+
+.brand-card__visual--contain:hover img {
+  transform: scale(1.02);
+}
+
+.brand-card__logo-wrap {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  box-shadow: var(--shadow-sm);
+  max-width: calc(100% - 2.5rem);
+}
+
+.brand-card__logo-wrap img {
+  height: 2.5rem;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-card__body {
+  padding: 1.5rem 1.6rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.brand-card__category {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--brand-card-accent, var(--c-navy-600));
+  text-transform: uppercase;
+}
+
+.brand-card__title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--c-navy-800);
+  line-height: 1.3;
+}
+
+.brand-card__title small {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  margin-top: 0.2rem;
+  letter-spacing: 0.02em;
+}
+
+.brand-card__text {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+.brand-card__cta {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-navy-700);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+
+.brand-card:hover .brand-card__cta {
+  color: var(--brand-card-accent, var(--c-emerald-600));
+}
+
+/* ============== Brand detail ============== */
+.brand-detail-page {
+  --brand-accent: var(--c-gold);
+}
+
+.brand-detail-page[data-brand="tokyo-supplement"] {
+  --brand-accent: #c9a45c;
+}
+.brand-detail-page[data-brand="bificure"] {
+  --brand-accent: #059669;
+}
+.brand-detail-page[data-brand="arukasagel"] {
+  --brand-accent: #2f5e9e;
+}
+.brand-detail-page[data-brand="kamakura-japon"] {
+  --brand-accent: #b45309;
+}
+.brand-detail-page[data-brand="aristino"] {
+  --brand-accent: #374151;
+}
+
+/* Product cards — nền đậm hơn nền trang để dễ phân biệt */
+.brand-detail {
+  --product-card-bg: #eef2f7;
+  --product-card-border: #d4dce6;
+  --product-card-shadow: 0 2px 12px rgba(15, 35, 70, 0.08);
+  margin-top: 0;
+  padding-top: calc(var(--header-height) + 1rem);
+}
+
+.brand-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-navy-700);
+  margin-bottom: 1.5rem;
+  scroll-margin-top: calc(var(--header-height) + 0.75rem);
+  transition: color 0.2s;
+}
+
+.brand-back:hover {
+  color: var(--brand-accent);
+}
+
+.brand-back svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.brand-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(155deg, var(--c-navy-50) 0%, var(--c-white) 42%, #f0f4fa 100%);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-hero__bg {
+  position: relative;
+  order: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: clamp(180px, 42vw, 320px);
+  background: linear-gradient(180deg, transparent 0%, rgba(231, 238, 247, 0.5) 100%);
+}
+
+.brand-hero__bg img {
+  width: 100%;
+  height: 100%;
+  max-height: clamp(200px, 38vw, 340px);
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 1;
+  padding: clamp(0.75rem, 3vw, 1.75rem) clamp(1rem, 4vw, 2rem) clamp(1rem, 3vw, 1.5rem);
+}
+
+.brand-hero__overlay {
+  display: none;
+}
+
+.brand-hero__content {
+  position: relative;
+  z-index: 1;
+  order: 1;
+  padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 2.5rem)
+    clamp(1rem, 3vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .brand-hero {
+    grid-template-columns: minmax(240px, 2fr) minmax(280px, 3fr);
+    min-height: clamp(260px, 32vw, 380px);
+  }
+
+  .brand-hero__content {
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  .brand-hero__bg {
+    min-height: auto;
+  }
+
+  .brand-hero__bg img {
+    max-height: none;
+    height: 100%;
+    padding: 1.5rem 2rem 2rem;
+  }
+}
+
+/* Hero emblem vuông — không phóng full cột (Aristino) */
+.brand-hero--emblem .brand-hero__bg {
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(160px, 32vw, 240px);
+}
+
+.brand-hero--emblem .brand-hero__bg img {
+  width: auto;
+  height: auto;
+  max-width: min(200px, 58vw);
+  max-height: min(180px, 42vw);
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+@media (min-width: 768px) {
+  .brand-hero--emblem {
+    grid-template-columns: minmax(260px, 1.15fr) minmax(200px, 0.85fr);
+    min-height: clamp(220px, 26vw, 300px);
+  }
+
+  .brand-hero--emblem .brand-hero__bg {
+    min-height: auto;
+  }
+
+  .brand-hero--emblem .brand-hero__bg img {
+    max-width: 200px;
+    max-height: 180px;
+    padding: 1rem 1.5rem;
+  }
+}
+
+.brand-hero__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.brand-hero__logo img {
+  height: clamp(2.25rem, 5vw, 3rem);
+  width: auto;
+  max-width: 260px;
+  object-fit: contain;
+}
+
+.brand-hero__title {
+  font-size: clamp(1.5rem, 3.5vw, var(--fs-2xl));
+  font-weight: 700;
+  color: var(--c-navy-800);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.brand-hero__tagline {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--c-navy-800);
+  line-height: 1.55;
+  max-width: 26rem;
+}
+
+.brand-hero__category {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--brand-accent, var(--c-navy-600));
+  text-transform: uppercase;
+}
+
+.brand-hero-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .brand-hero-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.brand-hero-gallery__item {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 7 / 4;
+  background: var(--c-navy-50);
+}
+
+.brand-hero-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-about {
+  max-width: 44rem;
+  margin-bottom: 2.5rem;
+}
+
+.brand-about p {
+  font-size: var(--fs-base);
+  color: var(--c-text-muted);
+  line-height: 1.85;
+}
+
+.brand-section__head {
+  margin-bottom: 1.75rem;
+}
+
+.brand-section__head h2 {
+  font-size: var(--fs-xl);
+  color: var(--c-navy-800);
+  margin-bottom: 0.35rem;
+}
+
+.brand-section__head p {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+}
+
+.brand-products__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+@media (min-width: 600px) {
+  .brand-products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-products__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 2製品のみ — PCで中央寄せ */
+  .brand-products__grid--pair,
+  .brand-products__grid:has(> .product-card:nth-child(2):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 400px));
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  /* 4製品など — PCは2列×2行（TOKYO Supplement など） */
+  .brand-products__grid--cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 920px;
+    margin-inline: auto;
+  }
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--product-card-bg, var(--c-surface));
+  border: 1px solid var(--product-card-border, var(--c-border));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--product-card-shadow, var(--shadow-sm));
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.product-card--static {
+  cursor: default;
+}
+
+.product-card--static:hover {
+  transform: none;
+  box-shadow: var(--product-card-shadow, var(--shadow-sm));
+}
+
+/* ----- Product image slider ----- */
+.product-slider {
+  --slider-frame-h: clamp(240px, 52vw, 300px);
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: var(--slider-frame-h);
+  background: linear-gradient(180deg, #fafbfd 0%, var(--c-white) 100%);
+  border-bottom: 1px solid var(--product-card-border, var(--c-border));
+  touch-action: pan-y;
+}
+
+@media (min-width: 600px) {
+  .product-slider {
+    --slider-frame-h: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-slider {
+    --slider-frame-h: 300px;
+  }
+}
+
+.product-slider__viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+  height: var(--slider-frame-h);
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-slider__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.product-slider__track {
+  display: flex;
+  height: var(--slider-frame-h);
+}
+
+.product-slider__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: var(--slider-frame-h);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.product-slider__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.product-slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--c-navy-800);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.product-slider__btn:hover:not(:disabled) {
+  background: var(--c-white);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.product-slider__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.product-slider__btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.product-slider__btn--prev {
+  left: 0.65rem;
+}
+
+.product-slider__btn--next {
+  right: 0.65rem;
+}
+
+.product-slider__btn--next svg {
+  transform: rotate(180deg);
+}
+
+.product-slider__footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem 0.75rem;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.45), transparent);
+  pointer-events: none;
+}
+
+.product-slider__dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  pointer-events: auto;
+}
+
+.product-slider__dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.product-slider__dot.is-active {
+  background: var(--c-white);
+  transform: scale(1.25);
+}
+
+.product-slider__counter {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.95);
+  margin-left: 0.35rem;
+  pointer-events: none;
+}
+
+.product-slider.is-single .product-slider__btn,
+.product-slider.is-single .product-slider__footer {
+  display: none;
+}
+
+.product-slider--gallery {
+  --slider-frame-h: clamp(220px, 45vw, 380px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .product-slider--gallery {
+    --slider-frame-h: 360px;
+  }
+}
+
+/* 化粧品など縦長画像 — スライダーを縦型ショーケースに */
+.product-slider--gallery-vertical {
+  --slider-frame-h: clamp(320px, 58vw, 440px);
+  width: 100%;
+  max-width: min(100%, 400px);
+  margin-inline: auto;
+  border: 1px solid var(--product-card-border, var(--c-border));
+  background: linear-gradient(165deg, #f8fafc 0%, #eef2f7 55%, #e8edf4 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+.product-slider--gallery-vertical .product-slider__slide {
+  padding: 1.25rem 2.75rem;
+}
+
+.product-slider--gallery-vertical .product-slider__slide img {
+  width: auto;
+  height: 100%;
+  max-height: calc(var(--slider-frame-h) - 2.5rem);
+  max-width: min(240px, 72%);
+  margin-inline: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 8px 20px rgba(15, 35, 70, 0.12));
+}
+
+@media (min-width: 768px) {
+  .product-slider--gallery-vertical {
+    --slider-frame-h: 480px;
+    max-width: 420px;
+  }
+
+  .product-slider--gallery-vertical .product-slider__slide {
+    padding: 1.5rem 3rem;
+  }
+
+  .product-slider--gallery-vertical .product-slider__slide img {
+    max-width: min(260px, 68%);
+    max-height: calc(var(--slider-frame-h) - 3rem);
+  }
+
+  .product-slider--gallery-vertical .product-slider__btn--prev {
+    left: 0.5rem;
+  }
+
+  .product-slider--gallery-vertical .product-slider__btn--next {
+    right: 0.5rem;
+  }
+}
+
+.brand-cosmetics .product-slider--gallery-vertical {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .product-slider__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .product-slider__btn--prev {
+    left: 1rem;
+  }
+
+  .product-slider__btn--next {
+    right: 1rem;
+  }
+}
+
+.product-card--has-link .product-card__cta {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-emerald-600);
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.product-card--has-link:hover .product-card__cta {
+  color: var(--c-emerald-700);
+}
+
+.product-card--has-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(15, 35, 70, 0.12);
+}
+
+.product-card__body {
+  padding: 1.25rem 1.35rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.product-card__name {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--c-navy-800);
+  line-height: 1.35;
+}
+
+.product-card__name-ja {
+  display: block;
+  font-size: 0.88em;
+  font-weight: 500;
+  color: var(--c-text-muted);
+  margin-top: 0.15rem;
+}
+
+.product-card__lead {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-navy-700);
+  line-height: 1.55;
+}
+
+.product-card__features {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  padding-left: 1.15rem;
+  margin: 0;
+  line-height: 1.55;
+}
+
+.product-card__features li + li {
+  margin-top: 0.35rem;
+}
+
+.product-card__features-heading {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--c-navy-800);
+  margin: 0.15rem 0 0.5rem;
+  line-height: 1.45;
+}
+
+.product-card__features--detail {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.product-card__features--detail li {
+  padding-left: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.65;
+  color: var(--c-text-muted);
+}
+
+.product-card__features--detail li + li {
+  margin-top: 0.85rem;
+}
+
+.product-card__features--detail strong {
+  display: block;
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--c-navy-700);
+  margin-bottom: 0.3rem;
+  line-height: 1.45;
+}
+
+.product-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.product-card__link-hint {
+  margin-top: auto;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--c-emerald-600);
+  letter-spacing: 0.04em;
+}
+
+.badge--soon {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.7rem;
+  background: var(--c-gold);
+  color: var(--c-navy-900);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.brand-cosmetics {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--c-border);
+}
+
+.brand-cosmetics__scroll {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 0.75rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+@media (min-width: 768px) {
+  .brand-cosmetics__scroll {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: visible;
+    gap: 1.25rem;
+  }
+}
+
+.brand-cosmetics__item {
+  flex: 0 0 min(72vw, 220px);
+  scroll-snap-align: start;
+  position: relative;
+  background: var(--c-white);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .brand-cosmetics__item {
+    flex: none;
+  }
+}
+
+.brand-cosmetics__item img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  padding: 0.75rem;
+  background: var(--c-surface);
+}
+
+.brand-cosmetics__item span {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--c-text-muted);
+  text-align: center;
+}
+
+.brand-cosmetics__badge {
+  margin-bottom: 1rem;
+}
+
+.brand-soon-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--c-navy-50);
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--c-navy-700);
+  margin-bottom: 1.5rem;
+}
+
+.brand-soon-banner .badge--soon {
+  position: static;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-card:hover,
+  .product-card--has-link:hover,
+  .brand-card__visual img,
+  .product-slider__viewport {
+    transform: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
+
+  .product-slider__btn:hover:not(:disabled) {
+    transform: translateY(-50%);
+  }
+}
