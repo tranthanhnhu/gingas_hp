@@ -18,6 +18,18 @@
     var index = 0;
     var multi = slides.length > 1;
     var lazyReady = false;
+    var perViewConfigured = Math.max(
+      1,
+      parseInt(root.getAttribute("data-slider-per-view") || "1", 10)
+    );
+
+    function getPerView() {
+      return Math.min(perViewConfigured, slides.length);
+    }
+
+    function maxIndex() {
+      return Math.max(0, slides.length - getPerView());
+    }
 
     root.classList.toggle("is-single", !multi);
 
@@ -62,8 +74,9 @@
     }
 
     function preloadNearby(center) {
+      var pv = getPerView();
       ensureImageLoaded(center);
-      ensureImageLoaded(center + 1);
+      for (var o = 1; o <= pv; o++) ensureImageLoaded(center + o);
       ensureImageLoaded(center - 1);
     }
 
@@ -116,17 +129,26 @@
 
     function syncUi() {
       var dots = root.querySelectorAll(".product-slider__dot");
+      var pv = getPerView();
+      var last = maxIndex();
       dots.forEach(function (d, i) {
         d.classList.toggle("is-active", i === index);
         d.setAttribute("aria-selected", i === index ? "true" : "false");
       });
-      if (counter) counter.textContent = index + 1 + " / " + slides.length;
+      if (counter) {
+        if (pv > 1) {
+          counter.textContent =
+            index + 1 + "–" + Math.min(index + pv, slides.length) + " / " + slides.length;
+        } else {
+          counter.textContent = index + 1 + " / " + slides.length;
+        }
+      }
       if (prevBtn) prevBtn.disabled = index === 0;
-      if (nextBtn) nextBtn.disabled = index === slides.length - 1;
+      if (nextBtn) nextBtn.disabled = index >= last;
     }
 
     function goTo(i) {
-      index = Math.max(0, Math.min(slides.length - 1, i));
+      index = Math.max(0, Math.min(maxIndex(), i));
       var slide = slides[index];
       viewport.scrollTo({
         left: slide.offsetLeft - track.offsetLeft,
