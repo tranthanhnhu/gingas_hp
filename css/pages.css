@@ -927,6 +927,16 @@
   max-height: min(420px, 70vw);
 }
 
+.article-gallery__item--focus-bottom img {
+  object-position: center bottom;
+}
+
+.article-hero--focus-bottom img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
 .article-gallery--cols-1 {
   grid-template-columns: 1fr;
   max-width: 640px;

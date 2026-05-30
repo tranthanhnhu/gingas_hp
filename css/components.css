@@ -555,6 +555,16 @@ body.is-nav-open .back-to-top {
   aspect-ratio: 16 / 9;
 }
 
+.media-frame--focus-right > img,
+.card__media.media-frame--focus-right img {
+  object-position: 72% center;
+}
+
+.media-frame--focus-bottom > img,
+.card__media.media-frame--focus-bottom img {
+  object-position: center bottom;
+}
+
 .media-frame--4x3 {
   aspect-ratio: 4 / 3;
 }
