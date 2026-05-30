@@ -232,19 +232,35 @@
   aspect-ratio: 4 / 3;
 }
 
+.trade-showcase {
+  margin-block: clamp(2rem, 4vw, 3rem);
+}
+
 .trade-video-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+  align-items: stretch;
 }
 
 .trade-video-row .media-frame {
   aspect-ratio: 16 / 9;
+  border: 1px solid var(--c-border);
+  background: var(--c-navy-50);
+}
+
+.trade-video-row .media-frame::before {
+  display: none;
+}
+
+.trade-video-row .media-frame > video {
+  object-fit: contain;
+  background: var(--c-navy-800);
 }
 
 .trade-media-row .media-frame:has(> img),
 .trade-grid .media-frame:has(> img),
+.trade-video-row .media-frame:has(> img),
 .trade-video-row .media-frame:has(> video) {
   border: 1px solid var(--c-border);
   background: var(--c-navy-50);
@@ -252,7 +268,7 @@
 
 .trade-media-row .media-frame:has(> img)::before,
 .trade-grid .media-frame:has(> img)::before,
-.trade-video-row .media-frame:has(> video)::before {
+.trade-video-row .media-frame::before {
   display: none;
 }
 
