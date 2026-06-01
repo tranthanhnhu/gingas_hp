@@ -49,7 +49,11 @@ DirectoryIndex index.html index.htm
   RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
   RewriteRule ^ /%1 [R=301,L,NE]
 
-  # 4. Internally serve .html for extensionless paths
+  # 4. Listing pages (folders news/ and brands/ exist for articles — must map explicitly)
+  RewriteRule ^news/?$ news.html [L]
+  RewriteRule ^brands/?$ brands.html [L]
+
+  # 5. Internally serve .html for extensionless paths
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME}.html -f
