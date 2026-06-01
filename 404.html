@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1a365d" />
+    <title>ページが見つかりません | Gingas LLC</title>
+    <meta name="robots" content="noindex, follow" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/reset.css?v=20260531.1" />
+    <link rel="stylesheet" href="/css/variables.css?v=20260531.1" />
+    <link rel="stylesheet" href="/css/base.css?v=20260531.1" />
+    <link rel="stylesheet" href="/css/components.css?v=20260531.1" />
+    <link rel="stylesheet" href="/css/pages.css?v=20260531.1" />
+    <style>
+      .error-page {
+        min-height: 60vh;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 4rem 1rem;
+      }
+      .error-page h1 {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        margin-bottom: 1rem;
+      }
+      .error-page p {
+        color: var(--c-text-muted);
+        max-width: 32rem;
+        margin: 0 auto 2rem;
+      }
+      .error-page__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#main" class="sr-only">本文へスキップ</a>
+
+    <header class="site-header" id="siteHeader">
+      <div class="container site-header__inner">
+        <a href="/" class="site-logo" aria-label="Gingas LLC ホーム">
+          <img src="/images/logo/gingas-logo.png" alt="Gingas LLC ロゴ" width="38" height="38" />
+          <span class="site-logo__brand">GINGAS</span>
+        </a>
+        <nav class="site-nav" id="siteNav" aria-label="メインナビゲーション">
+          <ul class="site-nav__list">
+            <li class="site-nav__item"><a href="/">ホーム</a></li>
+            <li class="site-nav__item"><a href="/message">代表挨拶</a></li>
+            <li class="site-nav__item"><a href="/services">事業内容</a></li>
+            <li class="site-nav__item"><a href="/brands">ブランド</a></li>
+            <li class="site-nav__item"><a href="/trade">輸出入</a></li>
+            <li class="site-nav__item"><a href="/news">お知らせ</a></li>
+            <li class="site-nav__item"><a href="/#company">会社情報</a></li>
+          </ul>
+          <a href="/contact" class="btn btn--primary site-nav__cta">お問い合わせ</a>
+        </nav>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="メニューを開閉" type="button">
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="error-page">
+      <div class="container">
+        <p class="section__eyebrow">404 NOT FOUND</p>
+        <h1>お探しのページが見つかりません</h1>
+        <p>
+          URLが変更されたか、削除された可能性があります。トップページまたはお問い合わせからご覧になりたい内容をお探しください。
+        </p>
+        <div class="error-page__actions">
+          <a href="/" class="btn btn--primary">ホームへ戻る</a>
+          <a href="/contact" class="btn btn--outline">お問い合わせ</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <span>© 2026 合同会社ギンガス Gingas LLC. All Rights Reserved.</span>
+          <div class="footer-bottom__links">
+            <a href="/privacy-policy">プライバシーポリシー</a>
+            <a href="/sitemap.xml">サイトマップ</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/js/main.js?v=20260531.1" defer></script>
+  </body>
+</html>

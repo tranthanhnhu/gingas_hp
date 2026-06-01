@@ -6,53 +6,98 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gingas.co.jp/message.html</loc>
+    <loc>https://gingas.co.jp/message</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://gingas.co.jp/services.html</loc>
+    <loc>https://gingas.co.jp/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gingas.co.jp/trade.html</loc>
+    <loc>https://gingas.co.jp/trade</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gingas.co.jp/news.html</loc>
+    <loc>https://gingas.co.jp/brands</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/news</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://gingas.co.jp/news/vietnam-healthcare-event.html</loc>
+    <loc>https://gingas.co.jp/contact</loc>
     <changefreq>yearly</changefreq>
-    <priority>0.55</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gingas.co.jp/news/company-overview-2026.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.55</priority>
-  </url>
-  <url>
-    <loc>https://gingas.co.jp/products/tokyo-res-1000.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://gingas.co.jp/products/bificure.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://gingas.co.jp/privacy-policy.html</loc>
+    <loc>https://gingas.co.jp/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://gingas.co.jp/contact.html</loc>
+    <loc>https://gingas.co.jp/products/bificure</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/products/tokyo-res-1000</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/brands/bificure</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/brands/arukasagel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/brands/aristino</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/brands/kamakura-japon</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/brands/tokyo-supplement</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/news/kewpie-cooperation</loc>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/news/vietnam-healthcare-event</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/news/company-overview-2026</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/news/namha-visit</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+  <url>
+    <loc>https://gingas.co.jp/news/vietnam-japan-science-seminar-2019</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
   </url>
 </urlset>
