@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="/css/variables.css?v=20260519.3" />
     <link rel="stylesheet" href="/css/base.css?v=20260519.3" />
     <link rel="stylesheet" href="/css/components.css?v=20260519.3" />
-    <link rel="stylesheet" href="/css/home.css?v=20260530.2" />
+    <link rel="stylesheet" href="/css/home.css?v=20260603.6" />
 
     <script type="application/ld+json">
       {
@@ -389,19 +389,35 @@
               </a>
             </div>
 
-            <div class="trade__media trade__media--video reveal">
-              <video
-                src="/videos/trade_video.mp4"
-                poster="/images/factory/factory-02.jpg"
-                autoplay
-                muted
-                loop
-                playsinline
-                webkit-playsinline
-                disablepictureinpicture
-                preload="auto"
-                aria-label="輸出入・物流のイメージ動画"
-              ></video>
+            <div class="trade__media-stack reveal" aria-label="輸出入・物流のイメージ動画">
+              <div class="trade__media trade__media--video">
+                <video
+                  src="/videos/trade_video.mp4"
+                  poster="/images/factory/factory-02.jpg"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  webkit-playsinline
+                  disablepictureinpicture
+                  preload="metadata"
+                  aria-label="コンテナ船・海上輸送"
+                ></video>
+              </div>
+              <div class="trade__media trade__media--video">
+                <video
+                  src="/videos/trade_video_2.mp4"
+                  poster="/images/trade/global-shipping.jpg"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  webkit-playsinline
+                  disablepictureinpicture
+                  preload="metadata"
+                  aria-label="国際物流・港湾"
+                ></video>
+              </div>
             </div>
           </div>
         </div>
