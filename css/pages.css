@@ -1024,8 +1024,15 @@
 
 .article-gallery--cols-1 {
   grid-template-columns: 1fr;
-  max-width: 640px;
+  max-width: min(100%, 820px);
   margin-inline: auto;
+}
+
+.article-gallery--cols-1 .article-gallery__item img {
+  aspect-ratio: auto;
+  max-height: min(560px, 75vh);
+  object-fit: contain;
+  background: var(--c-navy-50);
 }
 
 /* News article — hero + photo gallery */
@@ -1090,6 +1097,29 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   justify-items: stretch;
+}
+
+.interview-question {
+  position: relative;
+  margin: 1.25rem 0 1.5rem;
+  padding: 0.95rem 1.25rem 0.95rem 1.5rem;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--c-navy-800);
+  background: linear-gradient(90deg, var(--c-navy-50) 0%, rgba(231, 238, 247, 0.4) 100%);
+  border-left: 4px solid var(--c-gold, #c9a45c);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  quotes: "「" "」";
+}
+
+.interview-question::before {
+  content: "Q. ";
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--c-gold, #c9a45c);
+  margin-right: 0.35rem;
 }
 
 /* Lưới 2 cột — card lẻ cuối (vd. 3 ảnh) căn giữa */
