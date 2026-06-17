@@ -76,6 +76,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://gingas.co.jp/brands/samurami</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://gingas.co.jp/news/toa-factory-visit</loc>
     <changefreq>yearly</changefreq>
     <priority>0.65</priority>

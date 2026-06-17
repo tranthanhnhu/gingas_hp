@@ -170,6 +170,9 @@
 .brand-detail-page[data-brand="aristino"] {
   --brand-accent: #374151;
 }
+.brand-detail-page[data-brand="samurami"] {
+  --brand-accent: #c9a45c;
+}
 
 /* Product cards — nền đậm hơn nền trang để dễ phân biệt */
 .brand-detail {
