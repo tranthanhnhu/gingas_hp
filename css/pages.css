@@ -1211,13 +1211,20 @@
   max-width: 960px;
 }
 
+/* 7枚以上 — 4列（2段×4枚でバランス） */
+.cert-gallery:has(> figure:nth-child(7)) {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1200px;
+}
+
 @media (max-width: 768px) {
   .cert-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: 100%;
   }
 
-  .cert-gallery:has(> figure:nth-child(5)) {
+  .cert-gallery:has(> figure:nth-child(5)),
+  .cert-gallery:has(> figure:nth-child(7)) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
