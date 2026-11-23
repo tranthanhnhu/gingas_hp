@@ -96,6 +96,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://gingas.co.jp/news/bificure-vietnam-seminar-2026</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
     <loc>https://gingas.co.jp/news/vietnam-healthcare-event</loc>
     <changefreq>yearly</changefreq>
     <priority>0.55</priority>

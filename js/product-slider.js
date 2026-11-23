@@ -127,6 +127,8 @@
         : "smooth";
     }
 
+    var animating = false;
+
     function syncUi() {
       var dots = root.querySelectorAll(".product-slider__dot");
       var pv = getPerView();
@@ -148,14 +150,23 @@
     }
 
     function goTo(i) {
-      index = Math.max(0, Math.min(maxIndex(), i));
+      var next = Math.max(0, Math.min(maxIndex(), i));
+      if (next === index && !animating) {
+        syncUi();
+        return;
+      }
+      index = next;
       var slide = slides[index];
+      animating = true;
       viewport.scrollTo({
         left: slide.offsetLeft - track.offsetLeft,
         behavior: motion(),
       });
       syncUi();
       if (lazyReady) preloadNearby(index);
+      window.setTimeout(function () {
+        animating = false;
+      }, 420);
     }
 
     if (prevBtn) {
